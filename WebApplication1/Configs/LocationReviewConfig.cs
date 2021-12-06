@@ -20,6 +20,7 @@ namespace ConsoleApp1.Configs
             builder.Property(x => x.Text).HasColumnName(@"Text").HasColumnType("nvarchar").IsRequired(false).HasMaxLength(4000);
             builder.Property(x => x.Rating).HasColumnName(@"Rating").HasColumnType("tinyint").IsRequired();
             builder.Property(x => x.LocationFk).HasColumnName(@"LocationFk").HasColumnType("bigint").IsRequired();
+            builder.Property(x => x.Exists).HasColumnName(@"Exists").HasColumnType("bit").IsRequired(false);
 
             builder.HasOne(x => x.ApplicationUser).WithMany(y => y.LocationReviews).HasForeignKey(x => x.UserFk).OnDelete(DeleteBehavior.Cascade);
             builder.HasOne(x => x.Location).WithMany(y => y.LocationReviews).HasForeignKey(x => x.LocationFk).OnDelete(DeleteBehavior.Cascade);

@@ -11,6 +11,8 @@ namespace ConsoleApp1.Entities
     {
         public long LocationFk { get; set; }
 
+        public bool? Exists { get; set; }
+
         // NAVIGATION
         public Location Location { get; set; }
     }
